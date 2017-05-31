@@ -5,7 +5,7 @@ function Sound() {
 }
 
 Sound.playSfx = function (sfx) {
-  var audio = Tiny.audioManager.getAudio(sfx);
+  var audio = Tiny.audio.manager.getAudio(sfx);
   audio.play();
 };
 
