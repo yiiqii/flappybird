@@ -14,8 +14,8 @@ GroundScene.prototype.init = function () {
   sprite.addChild(two);
   sprite.setPosition(0, Tiny.WIN_SIZE.height);
 
-  var moveByAction = Tiny.MoveTo(1500, {x: -(spriteWidth / 2)});
-  sprite.runAction(Tiny.RepeatForever(moveByAction));
+  var moveToAction = Tiny.MoveTo(1500, {x: -(spriteWidth / 2)});
+  sprite.runAction(Tiny.RepeatForever(moveToAction));
 
   return sprite;
 };
