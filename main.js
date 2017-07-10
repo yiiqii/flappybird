@@ -8,6 +8,10 @@
       backgroundColor: 0x2a3145
     }
   };
+  if (navigator.userAgent.toLowerCase().indexOf('mobile') != -1) {
+    config.width = window.innerWidth;
+    config.height = window.innerHeight;
+  }
   Tiny.app = new Tiny.Application(config);
 
   var main = {
