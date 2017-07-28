@@ -18,12 +18,8 @@ html, body {height: 100%}
 .bar {margin:0 auto;margin-top:250px;height:4px;width:80%;border-radius:2px;overflow:hidden;background:#666;}
 .bar i {display:block;width:0;height:4px;background-color:#999;}
 p {margin-top:5px;text-align:center;color:#ddd;}
-.back-btn{display: none;position: fixed; top: 10px; left: 10px; width: 40px; height: 40px; z-index: 100000; }
-.back-btn span {position: absolute; top:0; left: 0; width: 100%; height: 100%; background: #000;opacity: 0.4; -webkit-opacity : 0.4; z-index: 1; overflow: hidden;border-radius: 50%; -webkit-border-radius: 50%;}
-.back-btn i{ position: absolute; top: 50%; left: 50%; margin: -6px 0 0 -5px; width: 8px; height: 12px; z-index: 10; background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAYBAMAAAABjmA/AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAYUExURQAAAP///////////////////////////yN+nV8AAAAHdFJOUwBGasga6ZXydqPkAAAAY0lEQVQI12NgAAM1CMXAVJ4AYaiXl0EFygOhAuUCUIFCsIA4VIARn4ACVKAILMBaXm4AZjCGQ41nEIUJsYSXFzuAWc7l5SYQIXMkoRCIevPyUogQG8xhDOlQ04FCClBvJDEAAFDCG7FxVjv/AAAAAElFTkSuQmCC"); background-size: 100% auto; background-repeat: no-repeat;}
 </style>
 <body>
-<a id="J-backBtn" class="back-btn"><i></i><span></span></a>
 <div class="bar">
     <i id="progress"></i>
 </div>
@@ -42,23 +38,5 @@ p {margin-top:5px;text-align:center;color:#ddd;}
 <script src='src/MainMenuLayer.js'></script>
 <script src='src/StartLayer.js'></script>
 <script src='main.js'></script>
-<script>
-    var backBtn = document.getElementById('J-backBtn');
-
-    function bridgeReady(){
-        AlipayJSBridge.call("hideTitlebar");
-
-        if(backBtn){
-            backBtn.style.display = "block";
-            backBtn.addEventListener('touchend', function (e) {
-                e.preventDefault();
-                AlipayJSBridge.call('closeWebview');
-            }, false);
-        }
-    }
-    window.AlipayJSBridge ? bridgeReady() : document.addEventListener('AlipayJSBridgeReady', function () {
-        bridgeReady();
-    });
-</script>
 </body>
 </html>
