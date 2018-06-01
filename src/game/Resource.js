@@ -1,9 +1,9 @@
 /* eslint-disable */
 
-var dirImg = 'res/images/';
-var dirSound = 'res/sound/';
+const dirImg = 'res/images/';
+const dirSound = 'res/sounds/';
 
-var RESOURCES = {
+const RESOURCES = {
   s_bg_day: dirImg + 'bg_day.png',
   s_bg_night: dirImg + 'bg_night.png',
   s_logo: dirImg + 'title.png',
@@ -24,20 +24,19 @@ var RESOURCES = {
   s_wing_ogg: dirSound + "sfx_wing.ogg"
 };
 
-(function () {
-  for (var i = 0; i < 3; i++) {
-    for (var j = 0; j < 3; j++) {
-      RESOURCES['s_bird' + i + '_' + j] = dirImg + 'bird' + i + '_' + j + '.png';
-    }
+for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
+    RESOURCES['s_bird' + i + '_' + j] = dirImg + 'bird' + i + '_' + j + '.png';
   }
-  for (var i = 0; i < 10; i++) {
-    RESOURCES['s_b_font' + i] = dirImg + 'b' + i + '.png';
-  }
-  for (var i = 0; i < 10; i++) {
-    RESOURCES['s_s_font' + i] = dirImg + 's' + i + '.png';
-  }
-  for (var i = 1; i <= 4; i++) {
-    RESOURCES['s_medal' + i] = dirImg + 'medal_' + i + '.png';
-  }
-})();
+}
+for (let i = 0; i < 10; i++) {
+  RESOURCES['s_b_font' + i] = dirImg + 'b' + i + '.png';
+}
+for (let i = 0; i < 10; i++) {
+  RESOURCES['s_s_font' + i] = dirImg + 's' + i + '.png';
+}
+for (let i = 1; i <= 4; i++) {
+  RESOURCES['s_medal' + i] = dirImg + 'medal_' + i + '.png';
+}
 
+export default RESOURCES;

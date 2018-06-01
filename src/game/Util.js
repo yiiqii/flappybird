@@ -1,19 +1,16 @@
-/* eslint-disable */
-
-function Util() {
-}
+const Util = {};
 
 Util.cookie = function (name, value, options) {
-  if (typeof value != 'undefined') {
+  if (typeof value !== 'undefined') {
     options = options || {};
     if (value === null) {
       value = '';
       options.expires = -1;
     }
     var expires = '';
-    if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
+    if (options.expires && (typeof options.expires === 'number' || options.expires.toUTCString)) {
       var date;
-      if (typeof options.expires == 'number') {
+      if (typeof options.expires === 'number') {
         date = new Date();
         date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
       } else {
@@ -27,11 +24,11 @@ Util.cookie = function (name, value, options) {
     document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
   } else {
     var cookieValue = null;
-    if (document.cookie && document.cookie != '') {
+    if (document.cookie && document.cookie !== '') {
       var cookies = document.cookie.split(';');
       for (var i = 0; i < cookies.length; i++) {
         var cookie = cookies[i].replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g, '');
-        if (cookie.substring(0, name.length + 1) == (name + '=')) {
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
           cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
           break;
         }
@@ -44,8 +41,8 @@ Util.cookie = function (name, value, options) {
 Util.storage = {
   init: function () {
     try {
-      localStorage.setItem('storage', '');
-      localStorage.removeItem('storage');
+      window.localStorage.setItem('storage', '');
+      window.localStorage.removeItem('storage');
     } catch (e) {
       if (e.name === 'SECURITY_ERR' || e.name === 'QuotaExceededError') {
         console.warn('Warning: localStorage isn\'t enabled. Please confirm browser cookie or privacy option');
@@ -56,16 +53,18 @@ Util.storage = {
   },
   get: function (key) {
     if (this.init()) {
-      return localStorage.getItem(key);
+      return window.localStorage.getItem(key);
     } else {
       return Util.cookie(key);
     }
   },
   set: function (key, value) {
     if (this.init()) {
-      localStorage.setItem(key, value);
+      window.localStorage.setItem(key, value);
     } else {
       Util.cookie(key, value);
     }
-  }
+  },
 };
+
+export default Util;
