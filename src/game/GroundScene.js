@@ -1,4 +1,5 @@
 import RESOURCES from './Resource';
+
 class GroundScene {
   init() {
     const sprite = new Tiny.Sprite();
@@ -19,7 +20,7 @@ class GroundScene {
   }
 
   createSprite() {
-    const sprite = Tiny.Sprite.fromImage(RESOURCES['s_ground']);
+    const sprite = Tiny.Sprite.fromImage(RESOURCES[ 's_ground' ]);
     sprite.setAnchor(0, 1);
     return sprite;
   };

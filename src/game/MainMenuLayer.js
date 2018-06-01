@@ -1,10 +1,10 @@
-/* eslint-disable */
 import RESOURCES from './Resource';
 import BackgroundScene from './BackgroundScene';
 import GroundScene from './GroundScene';
 import BirdScene from './BirdScene';
 import Sound from './Sound';
 import StartLayer from './StartLayer';
+
 class MainMenuLayer extends Tiny.Container {
   constructor() {
     super();
@@ -38,14 +38,14 @@ class MainMenuLayer extends Tiny.Container {
   };
 
   createLogo() {
-    const logo = Tiny.Sprite.fromImage(RESOURCES['s_logo']);
+    const logo = Tiny.Sprite.fromImage(RESOURCES[ 's_logo' ]);
     logo.setAnchor(0.5);
     logo.setPosition(Tiny.WIN_SIZE.width / 2, Tiny.WIN_SIZE.height / 2 - 100);
     return logo;
   };
 
   createStartBtn() {
-    const btn = Tiny.Sprite.fromImage(RESOURCES['s_button_play']);
+    const btn = Tiny.Sprite.fromImage(RESOURCES[ 's_button_play' ]);
     btn.setAnchor(0.5);
     btn.setPosition(Tiny.WIN_SIZE.width / 2, Tiny.WIN_SIZE.height - 138);
     return btn;

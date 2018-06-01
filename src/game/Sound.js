@@ -7,23 +7,23 @@ class Sound {
   };
 
   static playDieSound() {
-    this.playSfx(RESOURCES['s_die_ogg']);
+    this.playSfx(RESOURCES[ 's_die_ogg' ]);
   };
 
   static playHitSound() {
-    this.playSfx(RESOURCES['s_hit_ogg']);
+    this.playSfx(RESOURCES[ 's_hit_ogg' ]);
   };
 
   static playPointSound() {
-    this.playSfx(RESOURCES['s_point_ogg']);
+    this.playSfx(RESOURCES[ 's_point_ogg' ]);
   };
 
   static playSwooshingSound() {
-    this.playSfx(RESOURCES['s_swooshing_ogg']);
+    this.playSfx(RESOURCES[ 's_swooshing_ogg' ]);
   };
 
   static playWingSound() {
-    this.playSfx(RESOURCES['s_wing_ogg']);
+    this.playSfx(RESOURCES[ 's_wing_ogg' ]);
   }
 }
 

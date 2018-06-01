@@ -6,7 +6,7 @@ class Bird extends Tiny.AnimatedSprite {
     const type = Math.ceil(Math.random() * 3) - 1;
     var textures = [];
     for (var i = 0; i < 4; i++) {
-      textures.push(Tiny.Texture.fromImage(RESOURCES['s_bird' + type + '_' + (i === 3 ? 1 : i)]));
+      textures.push(Tiny.Texture.fromImage(RESOURCES[ 's_bird' + type + '_' + (i === 3 ? 1 : i) ]));
     }
 
     super(textures);

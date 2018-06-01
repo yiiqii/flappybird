@@ -78,7 +78,7 @@ class StartLayer extends Tiny.Container {
   }
 
   createReady() {
-    const ready = Tiny.Sprite.fromImage(RESOURCES['s_ready']);
+    const ready = Tiny.Sprite.fromImage(RESOURCES[ 's_ready' ]);
     ready.setAnchor(0.5);
     ready.setPosition(Tiny.WIN_SIZE.width / 2, Tiny.WIN_SIZE.height / 2 - 100);
 
@@ -86,7 +86,7 @@ class StartLayer extends Tiny.Container {
   };
 
   createTip() {
-    const tip = Tiny.Sprite.fromImage(RESOURCES['s_tip']);
+    const tip = Tiny.Sprite.fromImage(RESOURCES[ 's_tip' ]);
     tip.setAnchor(0.5);
     tip.setPosition(Tiny.WIN_SIZE.width / 2, Tiny.WIN_SIZE.height / 2 + 20);
 

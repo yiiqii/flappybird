@@ -27,6 +27,7 @@ class GameOverScene {
       self._bottom.runAction(self._moveUpAction);
     };
   }
+
   init() {
     const sprite = new Tiny.Sprite();
     // @ts-ignore
@@ -39,11 +40,12 @@ class GameOverScene {
   }
 
   createGo() {
-    const sprite = Tiny.Sprite.fromImage(RESOURCES['s_game_over']);
+    const sprite = Tiny.Sprite.fromImage(RESOURCES[ 's_game_over' ]);
     sprite.setAnchor(0.5, 1);
     sprite.setPosition(Tiny.WIN_SIZE.width / 2, 0);
     return sprite;
   }
+
   createBottom() {
     const sprite = new Tiny.Sprite();
     sprite.addChild(this._medalPanel);
@@ -55,7 +57,7 @@ class GameOverScene {
   }
 
   createMedalPanel() {
-    const sprite = Tiny.Sprite.fromImage(RESOURCES['s_button_score']);
+    const sprite = Tiny.Sprite.fromImage(RESOURCES[ 's_button_score' ]);
 
     sprite.addChild(this.createMedal());
     sprite.addChild(this.createScore());
@@ -78,7 +80,7 @@ class GameOverScene {
       n = 4;
     }
     if (n !== 0) {
-      sprite.addChild(Tiny.Sprite.fromImage(RESOURCES['s_medal' + n]));
+      sprite.addChild(Tiny.Sprite.fromImage(RESOURCES[ 's_medal' + n ]));
     }
 
     sprite.setPosition(31, 44);
@@ -88,11 +90,10 @@ class GameOverScene {
 
   createScore(score) {
     const sprite = new Tiny.Sprite();
-    /* eslint-disable */
-    let s = (score ? score : this.getScore()) + '';
+    let s = (score || this.getScore()) + '';
     let w = 0;
     for (var i = 0; i < s.length; i++) {
-      var num = Tiny.Sprite.fromImage(RESOURCES['s_s_font' + s[i]]);
+      var num = Tiny.Sprite.fromImage(RESOURCES[ 's_s_font' + s[ i ] ]);
       num.setAnchor(1, 0);
       num.setPosition(i * 16, 0);
       w = i * 16;
@@ -111,7 +112,7 @@ class GameOverScene {
   }
 
   createRestartBtn() {
-    const btn = Tiny.Sprite.fromImage(RESOURCES['s_button_play']);
+    const btn = Tiny.Sprite.fromImage(RESOURCES[ 's_button_play' ]);
     btn.setAnchor(0.5, 0.5);
     btn.setPosition(this._medalPanel.width / 2, this._medalPanel.height + 54);
     btn.setEventEnabled(true);

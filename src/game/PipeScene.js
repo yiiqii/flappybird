@@ -5,7 +5,7 @@ class PipeScene {
     this._pipeArray = [];
     this._pipeOffsetX = Tiny.WIN_SIZE.width / 2;
     this._pipeOffsetY = 120;
-    this._randomSection = [80, 240];
+    this._randomSection = [ 80, 240 ];
   }
 
   init() {

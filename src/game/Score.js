@@ -13,7 +13,7 @@ class Score extends Tiny.Sprite {
     let w = 0;
     this.removeChildren();
     for (var i = 0; i < s.length; i++) {
-      var num = Tiny.Sprite.fromImage(RESOURCES['s_b_font' + s[i]]);
+      var num = Tiny.Sprite.fromImage(RESOURCES[ 's_b_font' + s[ i ] ]);
       num.setAnchor(0.5);
       num.setPosition(i * 30, 0);
       w = i * 30 / 2;
